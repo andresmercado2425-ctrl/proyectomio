@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clase, miproyecto</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #ffffff; color: #333333; margin: 30px;">
+
+    <hr>Encapsulamiento, modificadores de acceso</hr>
+
+    <h2>Qué es el encapsulamiento?</h2>
+    <p style="line-height: 1.5;">Es proteger los datos de una clase para que nadie los pueda cambiar directamente desde afuera por equivocación. Se oculta la información y solo se permite modificar mediante reglas o métodos específicos.</p>
+    
+    <p><b>Ejemplo de Encapsulamiento:</b></p>
+    <pre style="font-family: monospace; padding-left: 5px;"><code>public class CuentaBancaria
+{
+    // El saldo está oculto y protegido
+    private decimal saldo;
+
+    // Método para cambiar el saldo de forma segura
+    public void Depositar(decimal monto)
+    {
+        if (monto > 0)
+        {
+            saldo += monto;
+        }
+    }
+}</code></pre>
+
+    <h2>Modificadores de acceso</h2>
+    <p style="line-height: 1.5;">Son palabras clave que definen quién tiene permiso de ver o usar una variable o método:</p>
+
+    <ul style="line-height: 1.6;">
+        <li><b style="color: #27ae60;">public:</b> Todo el mundo puede verlo y usarlo sin restricciones.</li>
+        <li><b style="color: #c0392b;">private:</b> Es un secreto. Solo se puede usar dentro de la misma clase donde se creó.</li>
+        <li><b style="color: #d35400;">protected:</b> Es familiar. Lo puede usar la clase original y las clases hijas que hereden de ella.</li>
+        <li><b style="color: #8e44ad;">internal:</b> Es local del proyecto. Solo se puede ver dentro del mismo proyecto actual.</li>
+    </ul>
+
+    <h2>Ejemplos de los modificadore</h2>
+
+    <p><b style="color: #27ae60;">1. public:</b></p>
+    <pre style="font-family: monospace; padding-left: 5px;"><code>public class Juego
+{
+    public string NombreNivel = "Nivel 1"; // Visible desde cualquier lugar
+}</code></pre>
+
+    <p><b style="color: #c0392b;">2. private:</b></p>
+    <pre style="font-family: monospace; padding-left: 5px;"><code>public class Persona
+{
+    private int contrasena = 1234; // Solo visible dentro de Persona
+}</code></pre>
+
+    <p><b style="color: #d35400;">3. protected:</b></p>
+    <pre style="font-family: monospace; padding-left: 5px;"><code>public class Animal
+{
+    protected void Respirar() { } // Visible en Animal y sus clases hijas
+}</code></pre>
+
+    <p><b style="color: #8e44ad;">4. internal:</b></p>
+    <pre style="font-family: monospace; padding-left: 5px;"><code>public class ConexionBD
+{
+    internal string Servidor = "192.168.1.1"; // Visible solo en este proyecto
+}</code></pre>
+
+</body>
+</html>
